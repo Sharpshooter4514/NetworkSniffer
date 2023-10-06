@@ -1,8 +1,5 @@
-import socket
 import os
-
-# Host to listen on
-host = '192.168.1.203'
+import socket
 
 def main():
     # create raw socket, bin to public interface
@@ -25,6 +22,9 @@ def main():
     # If we're on Windows, turn off promiscuious mode
     if os.name == 'nt':
         sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)\
+
+# Host to listen on
+host = '192.168.1.16'
 
 if __name__ == '__main__':
     main()
